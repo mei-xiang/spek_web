@@ -150,6 +150,13 @@
                   <span>92320684MA1NUK5F20</span>
                 </div>
               </div>
+              <div class="download">
+                <img src="../../assets/images/enterpriseImage/download.png" alt />
+                <p>
+                  <span>报告日期：</span>
+                  <span>2019-12-06 17:01:06</span>
+                </p>
+              </div>
               <div class="line"></div>
             </div>
             <!-- 1.总结报告 -->
