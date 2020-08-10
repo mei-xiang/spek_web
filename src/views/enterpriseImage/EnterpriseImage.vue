@@ -69,7 +69,7 @@
             <el-table-column prop="address" label="产品介绍"></el-table-column>
             <el-table-column prop="address" label="产品图片">
               <template>
-                <span class="look">查看</span>
+                <span class="look" @click="detail">查看</span>
               </template>
             </el-table-column>
           </el-table>
@@ -81,6 +81,7 @@
         </div>
         <div class="item">
           <h3>近12个月经营趋势变化图</h3>
+          <div id="business_trend" style="height:300px;width:100%"></div>
         </div>
       </el-tab-pane>
       <el-tab-pane label="企业荣誉" name="second">
@@ -107,14 +108,14 @@
             <el-table-column prop="address" label="产品介绍"></el-table-column>
             <el-table-column prop="address" label="产品图片">
               <template>
-                <span class="look">查看</span>
+                <span class="look" @click="detail">查看</span>
               </template>
             </el-table-column>
           </el-table>
         </div>
-        <div class="item">
+        <div class="item" style="width:100%;">
           <h3>概要信息</h3>
-          <div>
+          <div class="img_info">
             <img
               width="219px"
               height="300px"
@@ -852,10 +853,20 @@
         </div>
       </el-tab-pane>
     </el-tabs>
+    <!-- 对话框详情 -->
+    <el-dialog title="半自动机械臂" :visible.sync="showProductDia" @close="handleClose" width="1200px">
+      <div class="img_box">
+        <img
+          class="img"
+          src="https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg"
+        />
+      </div>
+    </el-dialog>
   </div>
 </template>
 
 <script>
+import echarts from 'echarts'
 export default {
   data() {
     return {
@@ -867,15 +878,122 @@ export default {
           address: '上海市普陀区',
         },
       ],
+      // 经营趋势数据
+      businessData: [
+        1200,
+        2000,
+        2800,
+        3200,
+        3500,
+        3000,
+        2200,
+        1700,
+        3700,
+        3100,
+        2400,
+        1700,
+      ],
+      // 经营趋势X轴
+      xAxisData: [
+        '2019/10',
+        '2019/11',
+        '2019/12',
+        '2020/01',
+        '2020/02',
+        '2020/03',
+        '2020/04',
+        '2020/05',
+        '2020/06',
+        '2020/07',
+        '2020/08',
+        '2020/09',
+      ],
+      showProductDia: false,
     }
   },
   components: {},
+  mounted() {
+    // 近12个月经营趋势变化图
+    this.businessTrend()
+  },
   methods: {
     handleClick(tab, event) {
       console.log(tab, event)
+    },
+    detail() {
+      this.showProductDia = true
+    },
+    handleClose() {
+      this.showProductDia = false
+    },
+    businessTrend() {
+      var myChart = echarts.init(document.getElementById('business_trend'))
+      var option = {
+        title: {},
+        tooltip: { trigger: 'axis', confine: true },
+        legend: {},
+        xAxis: {
+          data: this.xAxisData,
+          boundaryGap: false,
+          axisLine: {
+            lineStyle: {
+              color: '#58a5ff',
+            },
+          },
+        },
+        yAxis: {
+          axisLine: {
+            lineStyle: {
+              color: '#58a5ff',
+            },
+          },
+          axisLabel: {
+            formatter: '{value} w',
+          },
+          splitLine: {
+            lineStyle: {
+              color: '#58a5ff',
+            },
+          },
+        },
+        series: [
+          {
+            type: 'line',
+            data: this.businessData,
+            areaStyle: {
+              color: '#171975',
+            },
+            itemStyle: {
+              normal: {
+                color: '#58A5FF',
+              },
+            },
+          },
+        ],
+      }
+      myChart.setOption(option)
     },
   },
 }
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+/deep/ .el-dialog__body {
+  padding: 0 !important;
+  height: 686px;
+}
+.img_box {
+  width: 100%;
+  height: 100%;
+  .img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.img_info {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  overflow-x: auto;
+}
+</style>

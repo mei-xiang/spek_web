@@ -55,14 +55,15 @@ export default {
   left: 0;
   width: 100%;
   z-index: 99999999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   img {
     width: 146px;
     height: 21px;
     transform: translateY(5px);
   }
   ul {
-    float: right;
-    margin-right: 190px;
     li {
       float: left;
       line-height: 57px;
@@ -87,7 +88,6 @@ export default {
     }
   }
   .toggle {
-    position: absolute;
     padding: 0 40px;
     right: 0;
     top: 0;

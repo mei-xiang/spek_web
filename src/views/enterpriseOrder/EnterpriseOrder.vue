@@ -124,32 +124,40 @@
         <div class="order_box" style="background:RGBA(17,23,82,.7);">
           <div class="box_content">
             <p class="com_name">生产件数统计</p>
-            <el-tabs class="com_tabs" v-model="activeName" type="card" @tab-click="handleClick">
+            <el-tabs class="com_tabs" v-model="unitsStatus" type="card" @tab-click="handleClick">
               <el-tab-pane label="三个月" name="first"></el-tab-pane>
               <el-tab-pane label="半年" name="second"></el-tab-pane>
               <el-tab-pane label="一年" name="third"></el-tab-pane>
             </el-tabs>
           </div>
-          <div id="production_units" style="height:300px;"></div>
+          <div class="canvas_box">
+            <!-- 一年宽度为800  三个月或半年宽度为650 -->
+            <div id="production_units" :style="{height:350+'px',width:unitswidth+'px'}"></div>
+          </div>
         </div>
         <!-- 设备实时状态 -->
-        <div class="order_box" style="background:RGBA(17,23,82,.7)">
+        <div class="order_box device_box" style="background:RGBA(17,23,82,.7)">
           <div class="box_content">
             <p class="com_name" style="margin-bottom:30px">设备实时状态</p>
           </div>
-          <div id="device_status" style="height:300px;"></div>
+          <div class>
+            <div id="device_status" style="height:350px;"></div>
+          </div>
         </div>
         <!-- 缺陷统计图 -->
         <div class="order_box" style="background:RGBA(17,23,82,.7)">
           <div class="box_content">
             <p class="com_name">缺陷统计图</p>
-            <el-tabs class="com_tabs" v-model="activeName" type="card" @tab-click="handleClick">
+            <el-tabs class="com_tabs" v-model="defectStatus" type="card" @tab-click="handleClick">
               <el-tab-pane label="三个月" name="first"></el-tab-pane>
               <el-tab-pane label="半年" name="second"></el-tab-pane>
               <el-tab-pane label="一年" name="third"></el-tab-pane>
             </el-tabs>
           </div>
-          <div id="defect_graph" style="height:300px;overflow: auto;"></div>
+          <div class="canvas_box">
+            <!-- 一年宽度为800  三个月或半年宽度为650 -->
+            <div id="defect_graph" :style="{height:350+'px',width:defectwidth+'px'}"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -223,21 +231,41 @@ export default {
         },
       ],
       currentPage: 1,
+
       // 生产件数统计数据
-      unitsData: [
-        2000,
-        2000,
-        3000,
-        4000,
-        2000,
-        2500,
-        2000,
-        2000,
-        3000,
-        4000,
-        2000,
-        2500,
-      ],
+      unitsData: {
+        month: [
+          '2020/01',
+          '2020/02',
+          '2020/03',
+          '2020/04',
+          '2020/05',
+          '2020/06',
+          '2020/07',
+          '2020/08',
+          '2020/09',
+          '2020/10',
+          '2020/11',
+          '2020/12',
+        ], // x轴月份
+        number: [
+          2000,
+          2000,
+          3000,
+          4000,
+          2000,
+          2500,
+          2000,
+          2000,
+          3000,
+          4000,
+          2000,
+          2500,
+        ], // 件数
+      },
+      unitswidth: 800, // 生产件数统计画布宽度
+      unitsStatus: 'third', // 激活状态
+
       // 设备实时状态数据
       deviceStatusData: [
         { value: 48, name: '工作' },
@@ -248,6 +276,43 @@ export default {
         { value: '', name: '测试' },
         { value: '', name: '维护' },
       ],
+
+      // 缺陷统计图数据
+      defectData: {
+        month: [
+          '2020/01',
+          '2020/02',
+          '2020/03',
+          '2020/04',
+          '2020/05',
+          '2020/06',
+          '2020/07',
+          '2020/08',
+          '2020/09',
+          '2020/10',
+          '2020/11',
+          '2020/12',
+        ], // x轴年月份
+        qualified: [
+          1000,
+          1500,
+          1800,
+          3000,
+          2500,
+          2200,
+          1800,
+          2300,
+          3000,
+          2500,
+          2700,
+          3600,
+        ], // 合格
+        badness: [220, 182, 191, 234, 290, 330, 310, 800, 400, 600, 555, 700], // 不良
+        rejectRatio: [20, 30, 25, 14, 50, 30, 60, 35, 22, 25, 18, 50], // 不良率
+      },
+      defectStatus: 'third',
+      defectwidth: 800, // 缺陷统计图画布宽度
+
       // 对话框数据
       dialogTableVisible: false,
       productDetailData: [
@@ -328,20 +393,7 @@ export default {
         tooltip: { trigger: 'axis', confine: true },
         legend: {},
         xAxis: {
-          data: [
-            '2020/01',
-            '2020/02',
-            '2020/03',
-            '2020/04',
-            '2020/05',
-            '2020/06',
-            '2020/07',
-            '2020/08',
-            '2020/09',
-            '2020/10',
-            '2020/11',
-            '2020/12',
-          ],
+          data: this.unitsData.month,
           axisLine: {
             lineStyle: {
               color: '#58a5ff',
@@ -363,7 +415,7 @@ export default {
         series: [
           {
             type: 'bar',
-            data: this.unitsData,
+            data: this.unitsData.number,
             barWidth: '20px',
             itemStyle: {
               normal: {
@@ -414,7 +466,7 @@ export default {
           {
             type: 'group',
             top: 'middle',
-            left: '205',
+            left: '222',
             id: 'data',
             children: [
               {
@@ -471,40 +523,119 @@ export default {
     defectGraph() {
       var myChart = echarts.init(document.getElementById('defect_graph'))
       var option = {
-        title: {},
-        tooltip: { trigger: 'axis', confine: true },
-        legend: {},
+        tooltip: {
+          trigger: 'axis',
+          formatter: function (list) {
+            let msg = ''
+            for (let i in list) {
+              if (i == 0) {
+                msg += list[i].name + '<br>'
+              }
+              if (i > 0 && list[i].seriesName == '不良率') {
+                msg += list[i].seriesName + '：' + list[i].data + '%<br>'
+              } else {
+                msg += list[i].seriesName + '：' + list[i].data + '件<br>'
+              }
+            }
+            return msg
+          },
+        },
+        legend: {
+          left: '26px',
+          top: '15px',
+          textStyle: {
+            color: '#91c3ff',
+          },
+          data: ['合格', '不良', '不良率'],
+        },
         xAxis: {
-          data: ['2020/01', '2020/02', '2020/03'],
+          type: 'category',
           axisLine: {
             lineStyle: {
               color: '#58a5ff',
+              width: 2,
             },
           },
+          data: this.defectData.month,
         },
-        yAxis: {
-          axisLine: {
-            lineStyle: {
-              color: '#58a5ff',
+        yAxis: [
+          {
+            type: 'value',
+            // name: '件数',
+            max: 4000,
+            interval: 1000,
+            axisLabel: {
+              formatter: '{value} ',
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#58a5ff',
+                width: 2,
+              },
+            },
+            splitLine: {
+              //分割线配置
+              lineStyle: {
+                color: '#58a5ff',
+              },
             },
           },
-          splitLine: {
-            lineStyle: {
-              color: '#58a5ff',
+          {
+            type: 'value',
+            name: '百分比(%)',
+            max: 100,
+            interval: 25,
+            axisLabel: {
+              formatter: '{value} ',
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#58a5ff',
+                width: 2,
+              },
+            },
+            splitLine: {
+              //分割线配置
+              lineStyle: {
+                color: '#58a5ff',
+              },
             },
           },
-        },
+        ],
         series: [
           {
+            name: '合格',
             type: 'bar',
-            data: [1000, 2000, 3000, 4000],
-            barWidth: '20px',
+            stack: '余额',
+            barMaxWidth: 20,
+            data: this.defectData.qualified,
             itemStyle: {
               normal: {
-                color: '#4FFFEB',
+                color: '#58A5FF',
+              },
+            },
+          },
+          {
+            name: '不良',
+            type: 'bar',
+            stack: '余额',
+            barMaxWidth: 20,
+            data: this.defectData.badness,
+            itemStyle: {
+              normal: {
+                color: '#FF2A62',
                 barBorderRadius: [30, 30, 0, 0],
-                shadowColor: 'rgba(0,160,221,1)',
-                shadowBlur: 4,
+              },
+            },
+          },
+          {
+            name: '不良率',
+            data: this.defectData.rejectRatio,
+            type: 'line',
+            yAxisIndex: 1,
+            itemStyle: {
+              normal: {
+                color: '#FF2A62',
               },
             },
           },
