@@ -1,12 +1,12 @@
 .content {
   width: 1920px;
   min-height: 100%;
+  margin: 0 auto;
   overflow-x: hidden;
   background: url('~@/assets/images/bg.jpg') repeat;
   background-size: 100% 100%;
   color: #91c3ff;
-  padding: 60px 80px;
-  padding-bottom: 60px;
+  padding: 60px 80px 60px 80px;
 }
 .el-tabs--card > .el-tabs__header .el-tabs__nav {
   border: 1px solid #4e9fff !important;
@@ -72,6 +72,12 @@
   font-size: 14px;
   color: #cae3ff;
 }
+.el-table--border::after,
+.el-table--group::after,
+.el-table::before {
+  height: 0;
+  width: 0;
+}
 .el-dialog {
   background-color: transparent;
   color: #91c3ff;
@@ -103,7 +109,7 @@
   width: 100%;
   height: 1px;
   bottom: 0;
-  left: 20px;
+  left: 0;
   background: url('../images//enterpriseImage/info_gradient.svg') no-repeat;
 }
 .block {
@@ -301,6 +307,9 @@
   width: 1562px;
   display: inline-block;
 }
+.enterpriseImage .info .table_map table .bold {
+  font-weight: 650;
+}
 .enterpriseImage .info .table_map table th,
 .enterpriseImage .info .table_map table td {
   border: 1px solid #58a5ff !important;
@@ -308,33 +317,45 @@
 }
 .enterpriseImage .info .table_map table .business_box {
   padding-right: 0;
+  overflow-y: auto;
 }
 .enterpriseImage .info .table_map table .business {
   max-height: 60px;
-  overflow-y: scroll;
+  text-align: left;
+  line-height: 20px;
 }
 .enterpriseImage .info .table_map .map {
   display: inline-block;
   width: 159px;
   height: 159px;
-  background-color: pink;
+  cursor: pointer;
+  background-image: url('../images/enterpriseImage/enterprise_map.png');
+}
+.enterpriseImage .info .table_map .map:hover {
+  background: url('../images/enterpriseImage/enterprise_map_hover.png');
 }
 .enterpriseImage .el-tabs {
   height: 935px;
-  overflow: auto;
   margin-top: 50px;
   color: #91c3ff;
 }
 .enterpriseImage .el-tabs .el-tabs__nav {
-  transform: translateX(100%) !important;
+  transform: translateX(124.3%) !important;
 }
 .enterpriseImage .el-tabs .el-tabs__header {
   margin: 0;
 }
 .enterpriseImage .el-tabs .el-tabs__content {
+  max-height: 100%;
+  overflow-y: auto;
   border: 2px solid #4e9fff !important;
-  padding: 30px 25px;
+  padding: 30px 25px 0 25px;
   background: rgba(17, 23, 82, 0.7);
+  min-width: 1200px;
+  min-height: 390px;
+}
+.enterpriseImage .el-tabs .item {
+  margin-bottom: 30px;
 }
 .enterpriseImage .el-tabs h3 {
   font-weight: 650;
@@ -362,7 +383,6 @@
   line-height: 50px;
 }
 .enterpriseImage .control_report .summary_info .info_box .info {
-  width: 800px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -536,6 +556,13 @@
 .enterpriseOrder .order .figure #defect_graph {
   transform: translateY(-20px);
 }
+.order_table.el-table th {
+  color: #a5abf2;
+  font-weight: 500;
+}
+.order_table.el-table tr {
+  color: #c6d2f2;
+}
 .orderDialog {
   font-size: 16px;
 }
@@ -554,4 +581,202 @@
   line-height: 50px;
   font-size: 16px;
   color: #cae3ff;
+}
+.deviceTopology {
+  padding: 85px 25px 25px 25px;
+}
+.deviceTopology .device_box {
+  width: 100%;
+  background-color: rgba(10, 18, 84, 0.6);
+  display: flex;
+}
+.deviceTopology .device_box .left {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+.deviceTopology .device_box .left > div {
+  width: 350px;
+  height: 500px;
+  background-color: rgba(11, 16, 107, 0.7);
+  border: 1px solid #4e9fff;
+  margin-right: 50px;
+  margin-bottom: 30px;
+}
+.deviceTopology .device_box .right {
+  padding: 20px 0 70px 0;
+  text-align: center;
+  width: 160px;
+  background-color: rgba(6, 13, 101, 0.7);
+}
+.deviceTopology .device_box .right .status_box h2 {
+  margin-top: 70px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #91c3ff;
+}
+.deviceTopology .device_box .right .status_box p {
+  line-height: 40px;
+}
+.deviceTopology .device_box .right .status_box p .circle_statu {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: skyblue;
+  margin-right: 7px;
+}
+.deviceTopology .device_box .right .status_box p:nth-of-type(1) .circle_statu {
+  background-color: #00c808;
+}
+.deviceTopology .device_box .right .status_box p:nth-of-type(2) .circle_statu {
+  background-color: #aeaeae;
+}
+.deviceTopology .device_box .right .status_box p:nth-of-type(3) .circle_statu {
+  background-color: #58a5ff;
+}
+.deviceTopology .device_box .right .status_box p:nth-of-type(4) .circle_statu {
+  background-color: #eebc3b;
+}
+.deviceTopology .device_box .right .status_box p:nth-of-type(5) .circle_statu {
+  background-color: #ff1e62;
+}
+.deviceTopology .device_box .right .status_box p:nth-of-type(6) .circle_statu {
+  background-color: #b357ff;
+}
+.deviceTopology .device_box .right .status_box p:nth-of-type(7) .circle_statu {
+  background-color: #3aa25d;
+}
+.device_dia {
+  width: 720px;
+  height: 560px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #00034f;
+  border: 2px solid #497dc6;
+  border-radius: 5px;
+}
+.device_dia .title {
+  height: 60px;
+  line-height: 60px;
+  background-color: rgba(0, 5, 128, 0.7);
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.device_dia .title h2 {
+  vertical-align: middle;
+  font-size: 24px;
+  font-weight: 650;
+  height: 60px;
+}
+.device_dia .title h2 img {
+  margin-right: 8px;
+}
+.device_dia .title .close {
+  font-size: 60px;
+  line-height: 56px;
+  font-weight: 100;
+  cursor: pointer;
+}
+.device_dia .content_box {
+  height: calc(100% - 60px);
+}
+.device_dia .content_box .el-tabs {
+  height: 100%;
+}
+.device_dia .content_box .el-tabs .el-tabs__header {
+  background-color: rgba(0, 5, 128, 0.7);
+  border-bottom: 2px solid #497dc6;
+  margin: 0;
+}
+.device_dia .content_box .el-tabs .el-tabs__content {
+  padding: 25px 25px;
+  height: calc(100% - 43px);
+  overflow-y: auto;
+}
+.device_dia .content_box .info .info_con {
+  position: relative;
+  padding-bottom: 20px;
+}
+.device_dia .content_box .info .info_con .new {
+  color: #91c3ff;
+}
+.device_dia .content_box .info .info_con > p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #cae3ff;
+  line-height: 30px;
+}
+.device_dia .content_box .info .info_con > p span:first-of-type {
+  color: #91c3ff;
+  display: inline-block;
+  width: 115px;
+  text-align: right;
+  margin-right: 15px;
+}
+.device_dia .content_box .info .info_con .rate {
+  display: flex;
+}
+.device_dia .content_box .info .info_con .rate .el-progress {
+  flex: 1;
+}
+.device_dia .content_box .info .info_con .rate .el-progress .el-progress__text {
+  font-family: 'Impact', sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  color: #91c3ff;
+}
+.device_dia .content_box .info .info_box .item {
+  margin-top: 25px;
+}
+.device_dia .content_box .info .info_box .item .old {
+  color: #91c3ff;
+}
+.device_dia .content_box .info .info_box .item p {
+  margin: 15px 0;
+  font-weight: 400;
+  font-size: 14px;
+  color: #cae3ff;
+}
+.device_dia .content_box .info .info_box .item .el-table td,
+.device_dia .content_box .info .info_box .item .el-table th.is-leaf {
+  background-color: #00034f;
+}
+.device_dia .content_box .info .info_box .item .el-table td,
+.device_dia .content_box .info .info_box .item .el-table th {
+  padding: 8px 0;
+  font-weight: 400;
+}
+.device_dia .content_box .info .info_box .item .hisStatuTable.el-table td {
+  padding: 2px 0;
+}
+.device_dia .content_box .info .info_box .item .btn_img {
+  display: inline-block;
+  cursor: pointer;
+  width: 82px;
+  height: 30px;
+  transform: translateY(3px);
+  background: url('../images/deviceTopology/button.png');
+}
+.device_dia .content_box .info .info_box .item .btn_img:hover {
+  background: url('../images/deviceTopology/button_hover.png');
+}
+.device_dia .content_box .info .info_box .item .el-pagination .btn-prev {
+  background: #00034f;
+  color: #91c3ff;
+}
+.device_dia .content_box .info .info_box .item .el-pagination button:disabled {
+  background: #00034f;
+  color: #666;
+}
+.device_dia .content_box .info .info_box .item .el-pagination .btn-next {
+  background: #00034f;
+  color: #91c3ff;
+}
+.device_dia .content_box .info .info_box .item .el-pager li {
+  background-color: #00034f;
 }

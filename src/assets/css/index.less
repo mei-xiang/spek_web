@@ -13,12 +13,12 @@
   // overflow-y: scroll;
   width: 1920px;
   min-height: 100%;
+  margin: 0 auto;
   overflow-x: hidden;
   background: url('~@/assets/images/bg.jpg') repeat;
   background-size: 100% 100%;
   color: @theam_color;
-  padding: 60px 80px;
-  padding-bottom: 60px;
+  padding: 60px 80px 60px 80px;
 }
 
 // tabs标签页
@@ -88,6 +88,12 @@
   font-size: 14px;
   color: rgb(202, 227, 255);
 }
+.el-table--border::after,
+.el-table--group::after,
+.el-table::before {
+  height: 0;
+  width: 0;
+}
 
 // 对话框
 .el-dialog {
@@ -123,7 +129,7 @@
   width: 100%;
   height: 1px;
   bottom: 0;
-  left: 20px;
+  left: 0;
   background: url('../images//enterpriseImage/info_gradient.svg') no-repeat;
 }
 
@@ -341,6 +347,9 @@
       table {
         width: 1562px;
         display: inline-block;
+        .bold {
+          font-weight: 650;
+        }
       }
       table th,
       table td {
@@ -349,36 +358,49 @@
       }
       table .business_box {
         padding-right: 0;
+        overflow-y: auto;
       }
       table .business {
         max-height: 60px;
-        overflow-y: scroll;
+        text-align: left;
+        line-height: 20px;
       }
       .map {
         display: inline-block;
         width: 159px;
         height: 159px;
-        background-color: pink;
+        cursor: pointer;
+        background-image: url('../images/enterpriseImage/enterprise_map.png');
+        &:hover {
+          background: url('../images/enterpriseImage/enterprise_map_hover.png');
+        }
+        // background-color: pink;
         // margin-left: -100px;
       }
     }
   }
   .el-tabs {
     height: 935px;
-    overflow: auto;
     margin-top: 50px;
     color: @theam_color;
     .el-tabs__nav {
-      transform: translateX(100%) !important;
+      transform: translateX(124.3%) !important;
     }
     .el-tabs__header {
       margin: 0;
       // transform: translateX(60%);
     }
     .el-tabs__content {
+      max-height: 100%;
+      overflow-y: auto;
       border: 2px solid @border_color !important;
-      padding: 30px 25px;
+      padding: 30px 25px 0 25px;
       background: @tabs_page_bg_color;
+      min-width: 1200px;
+      min-height: 390px;
+    }
+    .item {
+      margin-bottom: 30px;
     }
     h3 {
       font-weight: 650;
@@ -409,7 +431,7 @@
         padding-bottom: 20px;
         line-height: 50px;
         .info {
-          width: 800px;
+          // width: 800px;
           display: flex;
           flex-wrap: wrap;
           > div {
@@ -590,9 +612,9 @@
           width: 650px;
         }
       }
-      .device_box{
+      .device_box {
         padding-left: 30px;
-        .box_content{
+        .box_content {
           padding-left: 0;
         }
       }
@@ -603,6 +625,14 @@
       }
     }
   }
+}
+
+.order_table.el-table th {
+  color: #a5abf2;
+  font-weight: 500;
+}
+.order_table.el-table tr {
+  color: #c6d2f2;
 }
 
 // 企业订单对话框
@@ -624,6 +654,219 @@
           line-height: 50px;
           font-size: 16px;
           color: #cae3ff;
+        }
+      }
+    }
+  }
+}
+
+// 设备拓扑图
+.deviceTopology {
+  padding: 85px 25px 25px 25px;
+  .device_box {
+    width: 100%;
+    // height: 100%;
+    background-color: RGBA(10, 18, 84, 0.6);
+    display: flex;
+    .left {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      // overflow: auto;
+      > div {
+        width: 350px;
+        height: 500px;
+        background-color: rgba(11, 16, 107, 0.7);
+        border: 1px solid @border_color;
+        margin-right: 50px;
+        margin-bottom: 30px;
+      }
+    }
+    .right {
+      padding: 20px 0 70px 0;
+      text-align: center;
+      width: 160px;
+      // height: 100%;
+      background-color: rgba(6, 13, 101, 0.7);
+      .status_box {
+        h2 {
+          margin-top: 70px;
+          margin-bottom: 20px;
+          font-weight: 400;
+          font-size: 18px;
+          color: #91c3ff;
+        }
+        p {
+          line-height: 40px;
+          .circle_statu {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: skyblue;
+            margin-right: 7px;
+          }
+          &:nth-of-type(1) .circle_statu {
+            background-color: #00c808;
+          }
+          &:nth-of-type(2) .circle_statu {
+            background-color: #aeaeae;
+          }
+          &:nth-of-type(3) .circle_statu {
+            background-color: #58a5ff;
+          }
+          &:nth-of-type(4) .circle_statu {
+            background-color: #eebc3b;
+          }
+          &:nth-of-type(5) .circle_statu {
+            background-color: #ff1e62;
+          }
+          &:nth-of-type(6) .circle_statu {
+            background-color: #b357ff;
+          }
+          &:nth-of-type(7) .circle_statu {
+            background-color: #3aa25d;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 设备信息对话框
+.device_dia {
+  width: 720px;
+  height: 560px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #00034f;
+  border: 2px solid #497dc6;
+  border-radius: 5px;
+  .title {
+    height: 60px;
+    line-height: 60px;
+    background-color: RGBA(0, 5, 128, 0.7);
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    h2 {
+      vertical-align: middle;
+      font-size: 24px;
+      font-weight: 650;
+      height: 60px;
+      img {
+        margin-right: 8px;
+      }
+    }
+    .close {
+      font-size: 60px;
+      line-height: 56px;
+      font-weight: 100;
+      cursor: pointer;
+    }
+  }
+  .content_box {
+    height: calc(100% - 60px);
+    .el-tabs {
+      height: 100%;
+      .el-tabs__header {
+        background-color: RGBA(0, 5, 128, 0.7);
+        border-bottom: 2px solid #497dc6;
+        margin: 0;
+      }
+      .el-tabs__content {
+        padding: 25px 25px;
+        height: calc(100% - 43px);
+        overflow-y: auto;
+      }
+    }
+    .info {
+      .info_con {
+        position: relative;
+        padding-bottom: 20px;
+        .new {
+          color: @theam_color;
+        }
+        > p {
+          font-weight: 400;
+          font-size: 14px;
+          color: #cae3ff;
+          line-height: 30px;
+          span {
+            &:first-of-type {
+              color: @theam_color;
+              display: inline-block;
+              width: 115px;
+              text-align: right;
+              margin-right: 15px;
+            }
+          }
+        }
+        .rate {
+          display: flex;
+          .el-progress {
+            flex: 1;
+            .el-progress__text {
+              font-family: 'Impact', sans-serif;
+              font-weight: 900;
+              font-size: 12px;
+              color: @theam_color;
+            }
+          }
+        }
+      }
+      .info_box {
+        .item {
+          margin-top: 25px;
+          .old {
+            color: @theam_color;
+          }
+          p {
+            margin: 15px 0;
+            font-weight: 400;
+            font-size: 14px;
+            color: #cae3ff;
+          }
+          .el-table td,
+          .el-table th.is-leaf {
+            background-color: #00034f;
+          }
+          .el-table td,
+          .el-table th {
+            padding: 8px 0;
+            font-weight: 400;
+          }
+          .hisStatuTable.el-table td {
+            padding: 2px 0;
+          }
+          .btn_img {
+            display: inline-block;
+            cursor: pointer;
+            width: 82px;
+            height: 30px;
+            transform: translateY(3px);
+            background: url('../images/deviceTopology/button.png');
+            &:hover {
+              background: url('../images/deviceTopology/button_hover.png');
+            }
+          }
+          .el-pagination .btn-prev {
+            background: #00034f;
+            color: @theam_color;
+          }
+          .el-pagination button:disabled {
+            background: #00034f;
+            color: #666;
+          }
+          .el-pagination .btn-next {
+            background: #00034f;
+            color: @theam_color;
+          }
+          .el-pager li {
+            background-color: #00034f;
+          }
         }
       }
     }

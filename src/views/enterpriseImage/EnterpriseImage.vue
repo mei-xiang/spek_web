@@ -11,23 +11,23 @@
         <table align="center" cellspacing="0" cellpadding="0" width="1500">
           <tr>
             <td width="175px">企业法人</td>
-            <td>杨志</td>
+            <td class="bold">杨志</td>
             <td>公司类型</td>
-            <td>有限责任公司（法人独资）</td>
+            <td class="bold">有限责任公司（法人独资）</td>
             <td>成立日期</td>
-            <td>2012年03月27日</td>
+            <td class="bold">2012年03月27日</td>
             <td>营业期限自</td>
-            <td>2013年05月31日</td>
+            <td class="bold">2013年05月31日</td>
           </tr>
           <tr>
             <td>统一社会信用代码</td>
-            <td>914403005930044606</td>
+            <td class="bold">914403005930044606</td>
             <td>注册资本</td>
-            <td>3999.9413万元人民币</td>
+            <td class="bold">3999.9413万元人民币</td>
             <td>登记状态</td>
-            <td>存续</td>
+            <td class="bold">存续</td>
             <td>营业期限至</td>
-            <td>2023年05月31日</td>
+            <td class="bold">2023年05月31日</td>
           </tr>
           <tr>
             <td>营业范围</td>
@@ -39,8 +39,7 @@
             </td>
           </tr>
         </table>
-
-        <div class="map">我是地图</div>
+        <div class="map" @click="jumpmap"></div>
       </div>
     </div>
     <!-- 企业选项卡 -->
@@ -81,7 +80,7 @@
         </div>
         <div class="item">
           <h3>近12个月经营趋势变化图</h3>
-          <div id="business_trend" style="height:300px;width:100%"></div>
+          <div id="business_trend" style="height:430px;width:110%"></div>
         </div>
       </el-tab-pane>
       <el-tab-pane label="企业荣誉" name="second">
@@ -629,15 +628,8 @@
                             <span>N/A</span>
                           </div>
                         </div>
-                        <div class="line"></div>
+                        <!-- <div class="line"></div> -->
                       </div>
-                    </div>
-                    <div class="hb">
-                      <el-table :data="tableData" border :stripe="false" style="width: 1007px">
-                        <el-table-column prop="date" label="姓名" width="185"></el-table-column>
-                        <el-table-column prop="address" label="证件号码" width="420"></el-table-column>
-                        <el-table-column prop="address" label="联系方式" width="400"></el-table-column>
-                      </el-table>
                     </div>
                   </div>
                   <div class="item">
@@ -917,6 +909,11 @@ export default {
     this.businessTrend()
   },
   methods: {
+    jumpmap() {
+      window.open(
+        'https://map.baidu.com/search/%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E6%B7%B1%E5%8D%97%E5%A4%A7%E9%81%93%E5%A4%A7%E5%86%B2%E5%95%86%E5%8A%A1%E4%B8%AD%E5%BF%83d%E5%BA%A718%E6%A5%BC/@12686100.115,2560775.19,19z?querytype=s&wd=%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E6%B7%B1%E5%8D%97%E5%A4%A7%E9%81%93%E5%A4%A7%E5%86%B2%E5%95%86%E5%8A%A1%E4%B8%AD%E5%BF%83D%E5%BA%A718%E6%A5%BC&c=340&pn=0&device_ratio=1&da_src=shareurl'
+      )
+    },
     handleClick(tab, event) {
       console.log(tab, event)
     },
@@ -932,6 +929,10 @@ export default {
         title: {},
         tooltip: { trigger: 'axis', confine: true },
         legend: {},
+        grid: {
+          left: '3%',
+          bottom: '5%',
+        },
         xAxis: {
           data: this.xAxisData,
           boundaryGap: false,
@@ -992,7 +993,7 @@ export default {
 }
 .img_info {
   width: 100%;
-  height: 300px;
+  height: 320px;
   display: flex;
   overflow-x: auto;
 }

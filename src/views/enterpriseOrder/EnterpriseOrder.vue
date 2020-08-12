@@ -88,7 +88,7 @@
           </el-tabs>
         </div>
         <div>
-          <el-table :data="productData" border :stripe="false" style="width: 100%">
+          <el-table :data="productData" border :stripe="false" style="width: 100%" class="order_table">
             <el-table-column prop="address1" label="订单编号"></el-table-column>
             <el-table-column prop="address2" label="合同编号"></el-table-column>
             <el-table-column prop="address3" label="贸易对手"></el-table-column>
@@ -111,8 +111,8 @@
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
               :current-page="currentPage"
-              :page-sizes="[100, 200, 300, 400]"
-              :page-size="100"
+              :page-sizes="[15, 20, 25, 30]"
+              :page-size="10"
               layout="total, sizes, prev, pager, next, jumper"
               :total="400"
             ></el-pagination>
@@ -263,7 +263,7 @@ export default {
           2500,
         ], // 件数
       },
-      unitswidth: 800, // 生产件数统计画布宽度
+      unitswidth: 950, // 生产件数统计画布宽度
       unitsStatus: 'third', // 激活状态
 
       // 设备实时状态数据
@@ -311,7 +311,7 @@ export default {
         rejectRatio: [20, 30, 25, 14, 50, 30, 60, 35, 22, 25, 18, 50], // 不良率
       },
       defectStatus: 'third',
-      defectwidth: 800, // 缺陷统计图画布宽度
+      defectwidth: 950, // 缺陷统计图画布宽度
 
       // 对话框数据
       dialogTableVisible: false,
@@ -392,6 +392,9 @@ export default {
         title: {},
         tooltip: { trigger: 'axis', confine: true },
         legend: {},
+        grid: {
+          left: '7.5%',
+        },
         xAxis: {
           data: this.unitsData.month,
           axisLine: {
@@ -421,8 +424,6 @@ export default {
               normal: {
                 color: '#4FFFEB',
                 barBorderRadius: [30, 30, 0, 0],
-                shadowColor: 'rgba(0,160,221,1)',
-                shadowBlur: 4,
               },
             },
           },
@@ -539,6 +540,9 @@ export default {
             }
             return msg
           },
+        },
+        grid: {
+          left: '7.5%',
         },
         legend: {
           left: '26px',
