@@ -2,15 +2,338 @@
   <div class="content deviceTopology">
     <jr-header></jr-header>
     <div class="device_box">
+      <!-- :style="{width: '150px',height:'100px'} 设置设备的宽度 高度
+           :style="{backgroundColor: statusColor[5]} 设置设备的状态颜色
+      -->
       <div class="left">
-        <div class="one">基板</div>
-        <div class="two">磊晶制成</div>
-        <div class="three">清洗</div>
-        <div class="fore">蒸镀</div>
-        <div class="fore">黄光工作</div>
-        <div class="fore">化学刻蚀</div>
-        <div class="fore">研磨</div>
-        <div class="fore">切割</div>
+        <div>
+          <h2>基板</h2>
+          <div class="device_img">
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>磊晶制成</h2>
+          <div class="device_img">
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>清洗</h2>
+          <div class="device_img">
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>蒸镀</h2>
+          <div class="device_img">
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>黄光工作</h2>
+          <div class="device_img">
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>化学刻蚀</h2>
+          <div class="device_img">
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>研磨</h2>
+          <div class="device_img">
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>切割</h2>
+          <div class="device_img">
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '70px',height:'100px'}" @click="deviceDetail">
+              <p class="device_top">A-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/D.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '114px',height:'120px'}" @click="deviceDetail">
+              <p class="device_top" :style="{backgroundColor: statusColor[5]}">B-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/C.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-01</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+            <div class="device_item" :style="{width: '200px',height:'145px'}" @click="deviceDetail">
+              <p class="device_top">C-02</p>
+              <div class="img_box">
+                <img class="device_bottom" src="../../assets/images/deviceTopology/E.png" alt />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="right">
         <img src="../../assets/images/deviceTopology/direct.png" alt />
@@ -286,9 +609,17 @@ import echarts from 'echarts'
 export default {
   data() {
     return {
-      showProductDia: true,
+      statusColor: [
+        '#00c808',
+        '#aeaeae',
+        '#58a5ff',
+        '#eebc3b',
+        '#ff1e62',
+        '#b357ff',
+        '#3aa25d;',
+      ],
       activeName: 'first',
-      isShowDeviceDia: true, // 设备信息对话框的显示有隐藏
+      isShowDeviceDia: false, // 设备信息对话框的显示有隐藏
       // 设备状况数据
       customColor: '#409eff',
       percentage: 20,
@@ -358,21 +689,25 @@ export default {
       currentPageSync: 1,
     }
   },
-  mounted() {
-    // 近一周机台利用时长
-    this.batch()
-    // 近一周机台利用时长
-    this.material()
-  },
+  mounted() {},
   methods: {
-    handleClose() {
-      this.showProductDia = false
-    },
     handleClick(tab, event) {
       console.log(tab, event)
     },
+    // 显示对话框
+    deviceDetail() {
+      this.isShowDeviceDia = true
+      this.$nextTick(() => {
+        // 近一周机台利用时长
+        this.batch()
+        // 近一周机台利用时长
+        this.material()
+      })
+    },
+    // 关闭对话框
     deviceCloseDia() {
       this.isShowDeviceDia = false
+      this.activeName = 'first'
     },
     // 设备状况利用时长
     batch() {
