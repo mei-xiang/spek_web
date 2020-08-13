@@ -23,7 +23,7 @@
 
 // tabs标签页
 .el-tabs--card > .el-tabs__header .el-tabs__nav {
-  border: 1px solid @border_color !important;
+  border: 1px solid @border_color;
 }
 .el-tabs--card > .el-tabs__header {
   border: none;
@@ -32,7 +32,7 @@
   border-bottom-color: #3e5984;
 }
 .el-tabs--card > .el-tabs__header .el-tabs__item {
-  border: 1px solid @border_color !important;
+  border: 1px solid @border_color;
 }
 .el-tabs--card > .el-tabs__header .el-tabs__item.is-active {
   background-color: RGBA(19, 10, 175, 0.9);
@@ -93,6 +93,21 @@
 .el-table::before {
   height: 0;
   width: 0;
+}
+
+// 进度条
+.el-progress-bar__outer {
+  background-color: #02066c;
+  border: 1px solid rgba(41, 139, 247, 0.5);
+  // border-image: linear-gradient(rgba(41, 139, 247, .5), rgba(75, 158, 255, .5));
+}
+
+.el-progress-bar__inner {
+  background: linear-gradient(
+    to right,
+    rgba(41, 139, 247, 0.2),
+    rgba(75, 158, 255, 1)
+  );
 }
 
 // 对话框
@@ -681,8 +696,13 @@
       > div {
         width: 500px;
         height: 500px;
-        background-color: rgba(11, 16, 107, 0.7);
-        border: 1px solid @border_color;
+        background-color: rgba(20, 0, 255, 0.13);
+        border: 1px solid rgba(41, 139, 247, 0.5);
+        border-image: -webkit-linear-gradient(
+            rgba(41, 139, 247, 0.5),
+            rgba(75, 158, 255, 1)
+          )
+          30 30;
         margin: 0 50px 30px 0;
       }
       .device_img {
@@ -697,6 +717,7 @@
           margin-bottom: 20px;
           margin-right: 20px;
           border: 1px solid #4e9fff;
+          background-color: rgba(20, 0, 255, 0.2);
           .device_top {
             height: 27px;
             line-height: 27px;
@@ -712,6 +733,9 @@
             .device_bottom {
               height: 100%;
               width: auto;
+            }
+            &:hover {
+              background-color: rgba(1, 83, 255, 0.3);
             }
           }
         }
@@ -815,6 +839,41 @@
         padding: 25px 25px;
         height: calc(100% - 43px);
         overflow-y: auto;
+      }
+      .el-tabs__item {
+        padding: 0;
+        // border: 1px solid rgba(41, 139, 247, 0.2);
+        border: 1px solid transparent;
+        color: #cae3ff;
+        padding: 0 30px;
+      }
+      .el-tabs__header .el-tabs__nav {
+        border: 1px solid transparent;
+        // border-image: linear-gradient(
+        //     rgba(41, 139, 247, 0.5),
+        //     rgba(75, 158, 255, 1)
+        //   )
+        //   1 1;
+      }
+      .el-tabs__item.is-active {
+        border: 1px solid rgba(41, 139, 247, 0.2);
+        background: linear-gradient(
+          45deg,
+          RGBA(0, 88, 191 0.36),
+          RGBA(29, 69, 277 0.15),
+          RGBA(0, 88, 191 0.36)
+        );
+        color: #cae3ff;
+      }
+      .el-tabs__item:hover {
+        border: 1px solid rgba(41, 139, 247, 0.2);
+        background: linear-gradient(
+          45deg,
+          RGBA(0, 88, 191 0.36),
+          RGBA(29, 69, 277 0.15),
+          RGBA(0, 88, 191 0.36)
+        );
+        color: #cae3ff;
       }
     }
     .info {

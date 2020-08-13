@@ -88,7 +88,13 @@
           </el-tabs>
         </div>
         <div>
-          <el-table :data="productData" border :stripe="false" style="width: 100%" class="order_table">
+          <el-table
+            :data="productData"
+            border
+            :stripe="false"
+            style="width: 100%"
+            class="order_table"
+          >
             <el-table-column prop="address1" label="订单编号"></el-table-column>
             <el-table-column prop="address2" label="合同编号"></el-table-column>
             <el-table-column prop="address3" label="贸易对手"></el-table-column>

@@ -400,11 +400,11 @@
                 </p>
                 <p class="rate">
                   <span>机台当日利用率</span>
-                  <el-progress :percentage="percentage" :color="customColor"></el-progress>
+                  <el-progress :percentage="percentage"></el-progress>
                 </p>
                 <p class="rate">
                   <span>机台当月利用率</span>
-                  <el-progress :percentage="percentage" :color="customColor"></el-progress>
+                  <el-progress :percentage="percentage"></el-progress>
                 </p>
                 <p>
                   <span>使用物料</span>
@@ -412,11 +412,11 @@
                 </p>
                 <p class="rate">
                   <span>物料当日使用率</span>
-                  <el-progress :percentage="percentage" :color="customColor"></el-progress>
+                  <el-progress :percentage="percentage"></el-progress>
                 </p>
                 <p class="rate">
                   <span>物料总使用率</span>
-                  <el-progress :percentage="percentage" :color="customColor"></el-progress>
+                  <el-progress :percentage="percentage"></el-progress>
                 </p>
                 <p>
                   <span>机台预计释放时间</span>
@@ -621,7 +621,7 @@ export default {
       activeName: 'first',
       isShowDeviceDia: false, // 设备信息对话框的显示有隐藏
       // 设备状况数据
-      customColor: '#409eff',
+      // customColor: 'red',
       percentage: 20,
       tableData: [
         {
