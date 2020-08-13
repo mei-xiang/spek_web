@@ -274,10 +274,10 @@ export default {
 
       // 设备实时状态数据
       deviceStatusData: [
-        { value: 48, name: '工作' },
-        { value: 16, name: '关机' },
-        { value: 33, name: '待机' },
-        { value: 14, name: '宕机' },
+        { value: 44, name: '工作' },
+        { value: 11, name: '关机' },
+        { value: 28, name: '待机' },
+        { value: 11, name: '宕机' },
         { value: 6, name: '年检' },
         { value: '', name: '测试' },
         { value: '', name: '维护' },

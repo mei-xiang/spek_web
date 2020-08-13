@@ -215,6 +215,18 @@
   cursor: pointer;
 }
 
+// 标题色块
+.chunk {
+  display: inline-block;
+  width: 110px;
+  height: 12px;
+  background-color: #907739;
+  position: absolute;
+  top: 53.5%;
+  left: 46.9%;
+  z-index: -1;
+}
+
 // 企业信息
 .compony {
   position: relative;
@@ -293,6 +305,8 @@
       font-weight: 500;
       line-height: 140px;
       font-size: 24px;
+      position: relative;
+      z-index: 999;
     }
     .box {
       margin-left: 100px;
@@ -306,6 +320,11 @@
         border: 2px solid #3e5984;
         margin-right: 45px;
         margin-bottom: 45px;
+        cursor: pointer;
+        background-color: RGBA(17, 23, 81);
+        &:hover {
+          background-color: RGBA(18, 20, 103);
+        }
         p {
           font-size: 12px;
           line-height: 30px;
@@ -313,6 +332,7 @@
         .company {
           line-height: 80px;
           font-size: 18px;
+          font-weight: 500;
         }
         .avatar {
           border-radius: 50%;
@@ -348,6 +368,12 @@
       font-weight: 500;
       line-height: 140px;
       font-size: 16px;
+      position: relative;
+      z-index: 999;
+      font-weight: 700;
+      .chunk {
+        top: 50%;
+      }
     }
     .logo {
       border-radius: 50%;
@@ -369,7 +395,7 @@
       table th,
       table td {
         border: 1px solid #58a5ff !important;
-        padding: 20px 30px;
+        padding: 10px 20px;
       }
       table .business_box {
         padding-right: 0;
@@ -413,6 +439,7 @@
       background: @tabs_page_bg_color;
       min-width: 1200px;
       min-height: 390px;
+      border-radius: 5px;
     }
     .item {
       margin-bottom: 30px;
@@ -841,24 +868,19 @@
         overflow-y: auto;
       }
       .el-tabs__item {
-        padding: 0;
+        padding: 0 !important;
         // border: 1px solid rgba(41, 139, 247, 0.2);
         border: 1px solid transparent;
         color: #cae3ff;
-        padding: 0 30px;
+        padding: 0 40px !important;
       }
       .el-tabs__header .el-tabs__nav {
         border: 1px solid transparent;
-        // border-image: linear-gradient(
-        //     rgba(41, 139, 247, 0.5),
-        //     rgba(75, 158, 255, 1)
-        //   )
-        //   1 1;
       }
       .el-tabs__item.is-active {
         border: 1px solid rgba(41, 139, 247, 0.2);
         background: linear-gradient(
-          45deg,
+          to right,
           RGBA(0, 88, 191 0.36),
           RGBA(29, 69, 277 0.15),
           RGBA(0, 88, 191 0.36)
@@ -868,7 +890,7 @@
       .el-tabs__item:hover {
         border: 1px solid rgba(41, 139, 247, 0.2);
         background: linear-gradient(
-          45deg,
+          to right,
           RGBA(0, 88, 191 0.36),
           RGBA(29, 69, 277 0.15),
           RGBA(0, 88, 191 0.36)

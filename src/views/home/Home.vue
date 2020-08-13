@@ -4,7 +4,7 @@
       <img src="../../assets/images/logo.png" alt />
     </div>
     <div class="content">
-      <h2>企业列表</h2>
+      <h2>企业列表<span class="chunk"></span></h2>
       <div class="box">
         <div class="item">
           <p class="company">深圳市思贝克工业发展有限公司</p>

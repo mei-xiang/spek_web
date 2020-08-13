@@ -4,7 +4,7 @@
     <jr-header></jr-header>
     <!-- 基本信息 -->
     <div class="info">
-      <h2>企业基本信息</h2>
+      <h2>企业基本信息<span class="chunk"></span></h2>
       <img class="logo" src="../../assets/images/enterpriseImage/enterprise_logo.png" alt />
       <p class="title">深圳市思贝克工业发展有限公司</p>
       <div class="table_map">
