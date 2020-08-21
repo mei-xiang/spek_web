@@ -89,7 +89,7 @@ export default {
   methods: {
     handleClick(tab, event) {
       // this.$emit('handleTabClick',this.activeName)
-      console.log(tab, event)
+      // console.log(tab, event)
     },
   },
 }

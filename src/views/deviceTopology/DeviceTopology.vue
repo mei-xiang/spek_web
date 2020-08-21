@@ -686,7 +686,7 @@ export default {
   mounted() {},
   methods: {
     handleClick(tab, event) {
-      console.log(tab, event)
+      // console.log(tab, event)
     },
     // 显示对话框
     deviceDetail() {
@@ -817,15 +817,15 @@ export default {
     },
     // 历史状况分页回调
     statuPageCallback(val) {
-      console.log(val)
+      // console.log(val)
     },
     // 历史加工分页回调
     processPageCallback(val) {
-      console.log(val)
+      // console.log(val)
     },
     // 异常事件分页回调
     syncPageCallback(val) {
-      console.log(val)
+      // console.log(val)
     },
   },
 }

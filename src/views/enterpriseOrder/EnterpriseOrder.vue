@@ -28,7 +28,7 @@ export default {
     orderFigure,
   },
   mounted() {
-    console.log(this.$GlobalDataUtils.getStr())
+    // console.log(this.$GlobalDataUtils.getStr())
   },
   methods: {},
 }

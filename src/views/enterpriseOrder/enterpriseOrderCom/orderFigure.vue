@@ -143,10 +143,10 @@ export default {
   watch: {},
   methods: {
     handleClick(tab, event) {
-      console.log(tab, event)
+      // console.log(tab, event)
     }, // 分页回调
     pageCallback(val) {
-      console.log(val)
+      // console.log(val)
     },
     showOrderDetail() {
       this.dialogTableVisible = true

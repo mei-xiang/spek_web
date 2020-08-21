@@ -167,10 +167,10 @@ export default {
   },
   methods: {
     handleClick(tab, event) {
-      console.log(tab, event)
+      // console.log(tab, event)
     }, // 分页回调
     pageCallback(val) {
-      console.log(val)
+      // console.log(val)
     },
     handleClose() {
       this.dialogTableVisible = false

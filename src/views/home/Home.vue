@@ -216,10 +216,10 @@ export default {
       this.$router.push({ path: '/enterpriseImage' })
     },
     handleChange(value) {
-      console.log(value)
+      // console.log(value)
     },
     callback(val) {
-      console.log(val)
+      // console.log(val)
     },
   },
 }
