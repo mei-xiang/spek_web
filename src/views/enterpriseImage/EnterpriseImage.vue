@@ -4,7 +4,10 @@
     <jr-header></jr-header>
     <!-- 基本信息 -->
     <div class="info">
-      <h2>企业基本信息<span class="chunk"></span></h2>
+      <h2>
+        企业基本信息
+        <span class="chunk"></span>
+      </h2>
       <img class="logo" src="../../assets/images/enterpriseImage/enterprise_logo.png" alt />
       <p class="title">深圳市思贝克工业发展有限公司</p>
       <div class="table_map">
@@ -39,14 +42,23 @@
             </td>
           </tr>
         </table>
-        <div class="map" @click="jumpmap"></div>
+        <div class="map_box">
+          <div class="map" @click="jumpmap">
+            <i class="iconfont">&#xe722;</i>
+            <span>深圳市南山区深南大道大冲商务中心D座18</span>
+            <i class="iconfont">&#xe724;</i>
+          </div>
+        </div>
       </div>
     </div>
     <!-- 企业选项卡 -->
     <el-tabs class="com_tabs" v-model="activeName" type="card" @tab-click="handleClick">
-      <el-tab-pane label="企业信用" name="first">
+      <el-tab-pane label="企业概况" name="first">
         <div class="item">
-          <h3>股东列表</h3>
+          <h2>
+            股东列表
+            <span class="chunk"></span>
+          </h2>
           <el-table :data="tableData" border :stripe="false" style="width: 100%">
             <el-table-column type="index" label="序号" width="70"></el-table-column>
             <el-table-column prop="date" label="股东名称"></el-table-column>
@@ -58,7 +70,10 @@
           </el-table>
         </div>
         <div class="item">
-          <h3>主要产品</h3>
+          <h2>
+            主要产品
+            <span class="chunk"></span>
+          </h2>
           <el-table :data="tableData" border :stripe="false" style="width: 100%">
             <el-table-column type="index" label="序号" width="70"></el-table-column>
             <el-table-column prop="date" label="企业产品（服务）名称"></el-table-column>
@@ -74,18 +89,28 @@
           </el-table>
         </div>
         <div class="item">
-          <h3>概要信息</h3>
+          <h2>
+            概要信息
+            <span class="chunk"></span>
+          </h2>
           <p>主要下游企业：深圳市水调歌头有限公司、李太白诗酒文化有限公司、京东集团、李太白诗酒文化有限公司</p>
           <p>企业标签：大规模企业、下游比值大、外销占比大、资产负债重、经营能力低下</p>
         </div>
         <div class="item">
-          <h3>近12个月经营趋势变化图</h3>
+          <h2>
+            近12个月经营趋势变化图
+            <span class="chunk"></span>
+          </h2>
           <div id="business_trend" style="height:430px;width:110%"></div>
         </div>
       </el-tab-pane>
       <el-tab-pane label="企业荣誉" name="second">
         <div class="item">
-          <h3>软件著作权</h3>
+          <h3></h3>
+          <h2>
+            软件著作权
+            <span class="chunk"></span>
+          </h2>
           <el-table :data="tableData" border :stripe="false" style="width: 100%">
             <el-table-column type="index" label="序号" width="70"></el-table-column>
             <el-table-column prop="date" label="软件名称"></el-table-column>
@@ -97,7 +122,11 @@
           </el-table>
         </div>
         <div class="item">
-          <h3>主要产品</h3>
+          <h3></h3>
+          <h2>
+            主要产品
+            <span class="chunk"></span>
+          </h2>
           <el-table :data="tableData" border :stripe="false" style="width: 100%">
             <el-table-column type="index" label="序号" width="70"></el-table-column>
             <el-table-column prop="date" label="企业产品（服务）名称"></el-table-column>
@@ -113,7 +142,10 @@
           </el-table>
         </div>
         <div class="item" style="width:100%;">
-          <h3>概要信息</h3>
+          <h2>
+            概要信息
+            <span class="chunk"></span>
+          </h2>
           <div class="img_info">
             <img
               width="219px"

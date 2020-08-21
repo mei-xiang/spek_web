@@ -493,15 +493,13 @@
                   </el-table>
                   <!-- 分页 -->
                   <div class="statuPage" style="margin:25px 0;">
-                    <el-pagination
-                      @size-change="handleSizeStatu"
-                      @current-change="handleCurrentStatu"
-                      :current-page="currentPageStatu"
-                      :page-sizes="[10, 15, 20, 30]"
-                      :page-size="10"
-                      layout="total, sizes, prev, pager, next, jumper"
-                      :total="65"
-                    ></el-pagination>
+                    <my-page
+                      :pageCurNum="2"
+                      :myPageSize="15"
+                      :myCount="73"
+                      :callBack="statuPageCallback"
+                      key="statuPage"
+                    ></my-page>
                   </div>
                 </div>
               </div>
@@ -526,15 +524,13 @@
                   </el-table>
                   <!-- 分页 -->
                   <div class="processPage" style="margin:25px 0;">
-                    <el-pagination
-                      @size-change="handleSizeProcess"
-                      @current-change="handleCurrentProcess"
-                      :current-page="currentPageProcess"
-                      :page-sizes="[10, 15, 20, 30]"
-                      :page-size="10"
-                      layout="total, sizes, prev, pager, next, jumper"
-                      :total="60"
-                    ></el-pagination>
+                    <my-page
+                      :pageCurNum="2"
+                      :myPageSize="15"
+                      :myCount="73"
+                      :callBack="processPageCallback"
+                      key="processPage"
+                    ></my-page>
                   </div>
                 </div>
               </div>
@@ -584,15 +580,13 @@
                   </el-table>
                   <!-- 分页 -->
                   <div class="syncPage" style="margin:25px 0;">
-                    <el-pagination
-                      @size-change="handleSizeSync"
-                      @current-change="handleCurrentSync"
-                      :current-page="currentPageStatu"
-                      :page-sizes="[10, 15, 20, 30]"
-                      :page-size="10"
-                      layout="total, sizes, prev, pager, next, jumper"
-                      :total="65"
-                    ></el-pagination>
+                    <my-page
+                      :pageCurNum="2"
+                      :myPageSize="15"
+                      :myCount="73"
+                      :callBack="syncPageCallback"
+                      key="syncPage"
+                    ></my-page>
                   </div>
                 </div>
               </div>
@@ -821,26 +815,17 @@ export default {
       }
       myChart.setOption(option)
     },
-    // 历史状况
-    handleSizeStatu(val) {
-      console.log(`每页 ${val} 条`)
+    // 历史状况分页回调
+    statuPageCallback(val) {
+      console.log(val)
     },
-    handleCurrentStatu(val) {
-      console.log(`当前页: ${val}`)
+    // 历史加工分页回调
+    processPageCallback(val) {
+      console.log(val)
     },
-    // 历史加工
-    handleSizeProcess(val) {
-      console.log(`每页 ${val} 条`)
-    },
-    handleCurrentProcess(val) {
-      console.log(`当前页: ${val}`)
-    },
-    // 异常事件
-    handleSizeSync(val) {
-      console.log(`每页 ${val} 条`)
-    },
-    handleCurrentSync(val) {
-      console.log(`当前页: ${val}`)
+    // 异常事件分页回调
+    syncPageCallback(val) {
+      console.log(val)
     },
   },
 }

@@ -17,14 +17,13 @@ module.exports = {
     }
   },
   devServer: {
-    // host: 'localhost',
-    host: '192.168.1.149',
+    host: 'localhost',
+    // host: '192.168.1.149',
     port: 8080,
     https: false,
     hotOnly: false,
     open: true // 配置自动启动浏览器
   }
-  // ,
   // // 打包去除console.log()
   // plugins: [
   //   ...transformRemoveConsolePlugin

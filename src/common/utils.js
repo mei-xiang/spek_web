@@ -68,4 +68,8 @@ export default class GlobalDataUtils {
       return null
     }
   }
+
+  static getStr(){
+    return 'aaa'
+  }
 }

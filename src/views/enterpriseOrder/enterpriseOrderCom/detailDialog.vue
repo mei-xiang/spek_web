@@ -85,6 +85,9 @@ export default {
       },
     },
   },
+  mounted () {
+    // console.log(this.dialogTableVisible)
+  },
   data() {
     return {
       isShowDialog: null,

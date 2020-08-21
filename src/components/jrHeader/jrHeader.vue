@@ -1,7 +1,6 @@
 <template>
-  <!-- <div class="box"> -->
   <div class="header">
-    <img src="../../assets/images/logo.png" alt />
+    <img src="../../assets/images/logo.svg" alt />
     <ul>
       <li>
         <router-link to="/enterpriseImage" :class="{ isActive: $route.path=='/enterpriseImage' }">
@@ -20,9 +19,11 @@
       </li>
     </ul>
 
-    <span @click="toggle" class="toggle">切换企业</span>
+    <span @click="toggle" class="toggle">
+      <i class="iconfont l_icon toggle_com">&#xe719;</i>
+      <span>切换企业</span>
+    </span>
   </div>
-  <!-- </div> -->
 </template>
 
 <script>
@@ -45,12 +46,11 @@ export default {
   position: relative;
 }
 .header {
-  height: 60px;
-  line-height: 60px;
-  background: rgba(9, 17, 95, 0.8);
-  border-bottom: 2px solid #3e5984;
+  height: 54px;
+  line-height: 54px;
+  background: rgba(30, 86, 160, 1);
   padding: 0 0 0 15px;
-  color: rgba(184, 217, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   position: fixed;
   top: 0;
   left: 0;
@@ -60,30 +60,27 @@ export default {
   align-items: center;
   justify-content: space-between;
   img {
-    width: 146px;
-    height: 21px;
-    transform: translateY(5px);
   }
   ul {
     li {
       float: left;
-      line-height: 57px;
+      line-height: 54px;
       cursor: pointer;
       a {
         display: inline-block;
         width: 100%;
         height: 100%;
         padding: 0 40px;
-        color: rgba(184, 217, 255, 0.8);
+        border-top: 4px solid transparent;
+        color: rgba(255, 255, 255, 1);
+        line-height: 50px;
         &:hover {
-          background-color: RGBA(9, 35, 127, 0.8);
-          color: rgb(202, 227, 255);
-          border-bottom: 3px solid #58a5ff;
+          background: rgba(10, 31, 68, 0.29);
+          border-top: 4px solid rgba(0, 127, 255, 1);
         }
         &.isActive {
-          background-color: RGBA(9, 35, 127, 0.8);
-          color: rgb(202, 227, 255);
-          border-bottom: 3px solid #58a5ff;
+          background: rgba(10, 31, 68, 0.29);
+          border-top: 4px solid rgba(0, 127, 255, 1);
         }
       }
     }
@@ -92,12 +89,20 @@ export default {
     padding: 0 40px;
     right: 0;
     top: 0;
-    border-bottom: 3px solid transparent;
+    height: 54px;
+    line-height: 50px;
+    border-top: 4px solid transparent;
     cursor: pointer;
     &:hover {
-      background-color: RGBA(9, 35, 127, 0.8);
-      color: rgb(202, 227, 255);
-      border-bottom: 3px solid #58a5ff;
+      background: rgba(10, 31, 68, 0.29);
+      border-top: 4px solid rgba(0, 127, 255, 1);
+    }
+    .toggle_com {
+      font-size: 24px;
+    }
+    i,
+    span {
+      vertical-align: middle;
     }
   }
 }
