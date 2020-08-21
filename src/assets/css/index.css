@@ -1,6 +1,6 @@
 .content {
-  width: 1920px;
   min-width: 1200px;
+  /*no*/
   min-height: 100%;
   margin: 0 auto;
   background: #f8f8f8;
@@ -465,6 +465,23 @@ h2 {
 }
 .enterpriseImage .el-tabs p {
   line-height: 35px;
+  color: #8a94a6;
+  font-size: 12px;
+}
+.enterpriseImage .el-tabs p .tit {
+  display: inline-block;
+  font-size: 14px;
+  width: 98px;
+  text-align: right;
+  margin-right: 10px;
+}
+.enterpriseImage .el-tabs p .main_com {
+  color: #53627c;
+}
+.enterpriseImage .el-tabs p .com_label {
+  color: #0d55cf;
+  margin-right: 4px;
+  background: #ebf5ff;
 }
 .enterpriseImage .el-tabs .look {
   color: #00c808;

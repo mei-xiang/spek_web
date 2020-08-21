@@ -93,8 +93,20 @@
             概要信息
             <span class="chunk"></span>
           </h2>
-          <p>主要下游企业：深圳市水调歌头有限公司、李太白诗酒文化有限公司、京东集团、李太白诗酒文化有限公司</p>
-          <p>企业标签：大规模企业、下游比值大、外销占比大、资产负债重、经营能力低下</p>
+          <p>
+            <span class="tit">主要下游企业：</span>
+            <span class="main_com">深圳市水调歌头有限公司、李太白诗酒文化有限公司、京东集团、李太白诗酒文化有限公司</span>
+          </p>
+          <p>
+            <span class="tit">企业标签：</span>
+            <span>
+              <span class="com_label">大规模企业</span>
+              <span class="com_label">下游比值大</span>
+              <span class="com_label">外销占比大</span>
+              <span class="com_label">资产负债重</span>
+              <span class="com_label">经营能力低下</span>
+            </span>
+          </p>
         </div>
         <div class="item">
           <h2>
@@ -1028,5 +1040,10 @@ export default {
   height: 320px;
   display: flex;
   overflow-x: auto;
+}
+.aaaa{
+  width: 200px;
+  height: 200px;
+  background-color: pink;
 }
 </style>

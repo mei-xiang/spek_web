@@ -4,7 +4,8 @@ import router from './router'
 import store from './store'
 import './plugins/element.js'
 import rules from 'common/rules.js' // 引入自定义验证
-// import 'lib-flexible/flexible'
+
+import 'lib-flexible/flexible'
 
 // 引入样式，字体，图标
 import 'assets/css/normalize.css'
@@ -14,9 +15,9 @@ import 'assets/css/index.css'
 import 'assets/iconfont/iconfont.css'
 import 'assets/fonts/font.css'
 
-import storage from 'common/storage.js'
-import GlobalDataUtils from 'common/utils.js'
-import api from 'network/api'
+import storage from 'common/storage.js' // 本地存储
+import GlobalDataUtils from 'common/utils.js' // 公共方法
+import api from 'network/api' // axios请求
 
 import jrHeader from 'components/jrHeader'
 import myPage from 'components/myPage'

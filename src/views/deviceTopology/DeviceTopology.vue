@@ -615,7 +615,6 @@ export default {
       activeName: 'first',
       isShowDeviceDia: false, // 设备信息对话框的显示有隐藏
       // 设备状况数据
-      // customColor: 'red',
       percentage: 20,
       tableData: [
         {
